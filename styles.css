@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #d2e3d8;
+}
+
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Adds 3D perspective */
+}
+
+.slide {
+    position: absolute;
+    width: 80vw;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(226, 111, 111, 0.5);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    opacity: 0;
+    transform: scale(0.8) rotateY(30deg);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+button.prev {
+    left: 30px;
+}
+
+button.next {
+    right: 30px;
+}
